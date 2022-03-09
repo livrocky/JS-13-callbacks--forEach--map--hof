@@ -74,10 +74,39 @@ console.log("dvigubosReiksmesShort===", dvigubosReiksmesShort);
 const ulEl = document.getElementById("ul");
 //gaunam masyva su li ele textu
 const liArr = skArray.map((sk) => `<li> skaicius ${sk} </li>`);
+
+//masyva paverciam i string
 const liStringFromArr = liArr.join("");
-console.log("liStringFromArr===", liStringFromArr);
+//ikeliam sugeneruota stringa i html
 ulEl.innerHTML = liStringFromArr;
 
-//chain methods//
+// Chain methods
+const liStrigChain = skArray
+  .filter((sk) => sk > 5)
+  .map((sk) => `<li> skaicius ${sk} </li>`)
+  .join("");
+console.log("liStrigChain ===", liStrigChain);
 
-const liStringChain = skArray.filtermap((sk) => `<li> skaicius ${sk} </li>`).join("");
+// extra sunkesnis
+// e1. is skArray su reduce grazinti vidurki
+// e2. is skArray su reduce grazinti objekta
+{
+  vidurkis: "";
+}
+// e2. is skArray su reduce grazinti objekta
+{
+  vidurkis: "";
+  totalSuma: "";
+}
+// e2. is skArray su reduce grazinti objekta
+// {
+//   teigiami: [...]
+//   neigiami: [...]
+// }
+
+const arr2 = [
+  [0, 15, 25],
+  [15, -5, 30],
+  [-15, 7, 12],
+];
+// e2. is arr2 su reduce grazinti nauja masyva kuriame yra tik vienas masyvo lygis. is visu vidiniu masyvu istraukiam reiksmes ir sukeliam i viena masyva
